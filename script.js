@@ -1,21 +1,32 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-    const calculateButton = document.getElementById('calculate-button');
-    const ansDiv = document.getElementById('ans');
+const getSumBtn = document.createElement("button");
+getSumBtn.append("Get Total Price");
+document.body.appendChild(getSumBtn);
 
-    // Function to calculate and display the total price
-    function calculateTotal() {
-        const prices = document.querySelectorAll('.price');
-        let total = 0;
+const getSum = () => {
+//Add your code here
+	let prices=document.getElementsByClassName("price");
+	let n=prices.length;
+	let ans=0;
+	for(let i=0;i<n;i++)
+		{
+			let price=(Number)(prices.item(i).innerText);
+			ans+=price;
+        }
+	
+	let table=document.getElementsByTagName("table").item(0);
+	
+	 let row=document.createElement("tr");
+	let d1=document.createElement("td");
+	let d2=document.createElement("td");
+	d1.innerText="total price";
+	row.appendChild(d1);
+	d2.id="ans";
+	d2.innerText=ans;
+	row.appendChild(d2);
+	table.appendChild(row);
+	
+  
+};
 
-        prices.forEach(price => {
-            total += parseFloat(price.textContent);
-        });
-
-        // Display the total price in the ans div
-        ansDiv.textContent = `Total Price: $${total.toFixed(2)}`;
-    }
-
-    // Add event listener to the calculate button
-    calculateButton.addEventListener('click', calculateTotal);
-});
+getSumBtn.addEventListener("click", getSum,{once:true});
