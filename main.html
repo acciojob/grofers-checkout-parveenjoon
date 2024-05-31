@@ -1,39 +1,30 @@
+
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<table>  
-	  <tr>
-	  <td>1</td>
-	  <td>Item-1</td>
-	  <td data-ns-test="prices">181</td>
-  </tr>
-	  <tr>
-	  <td>2</td>
-	  <td>Item-2</td>
-	  <td data-ns-test="prices">183</td>
-  </tr>
-	  <tr>
-	  <td>3</td>
-	  <td>Item-3</td>
-	  <td data-ns-test="prices">173</td>
-  </tr>
-  <tr>
-	  <td>4</td>
-	  <td>Item-4</td>
-	  <td data-ns-test="prices">171</td>
-  </tr>
-  </table>
-
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <table id="grocery-table">
+        <tr class="item">
+            <td>Apple</td>
+            <td class="price">1.50</td>
+        </tr>
+        <tr class="item">
+            <td>Banana</td>
+            <td class="price">0.75</td>
+        </tr>
+        <tr class="item">
+            <td>Orange</td>
+            <td class="price">1.25</td>
+        </tr>
+        <!-- More items can be added here -->
+    </table>
+    <button id="calculate-button">Calculate Total</button>
+    <div id="ans"></div>
+    <script src="scripts.js"></script>
 </body>
-
 </html>
